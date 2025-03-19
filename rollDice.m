@@ -27,7 +27,6 @@ function newDice = DiceRoll(currentDice, reRolls)
    newDice = currentDice; % Keep existing dice values
    newDice(reRolls) = randi([1,6], 1, sum(reRolls)); % Only re-roll selected dice
 end
-
 function reRolls = UserReRollChoice(dice)
    % Ask the user which dice to re-roll
    disp("Enter the positions of the dice you want to RE-ROLL (1-5), separated by spaces, then press 'Enter'");
