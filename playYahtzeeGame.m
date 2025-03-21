@@ -1,6 +1,4 @@
-% playYahtzeeGame
-% Main function integrating all components of the Yahtzee game
-% Gideon Buddenhagen
+%This is our final Yahtzee game! Type playYahtzeeGame to begin!
 
 function playYahtzeeGame()
     disp('🎲 Starting Yahtzee Game...');
@@ -9,10 +7,10 @@ function playYahtzeeGame()
     finalDice = rollDice(); 
 
     % Step 2: Calculate all scores using Sawyer's function
-    scoreArray = yahtzeeScorer(finalDice);
+    score = yahtzeeScorer(finalDice);
 
     % Step 3: Choose the best scoring category
-    [bestCategory, bestScore] = chooseBestCategory(scoreArray);
+    [bestCategory, bestScore] = chooseBestCategory(score);
 
     % Step 4: Display results
     fprintf('\nFinal Dice: [%d %d %d %d %d]\n', finalDice);

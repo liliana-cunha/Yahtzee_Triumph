@@ -1,9 +1,9 @@
-function score = yahtzeeScorer(rolls)
+function score = yahtzeeScorer(finalDice)
     score = zeros(1, 13); % Scorecard for all 13 categories, ready to be called later %
     yahtzeeBonus = 0; % Tracks extra Yahtzee bonuses (optional Yahtzee rule) %
 
-    for r = 1:size(rolls, 1) % should run 13 times, but here in case of extra yahtzees %
-        dice = sort(rolls(r, :)); % new variable 'dice' which is just rolls sorted %
+    for r = 1:size(finalDice, 1) % should run 13 times, but here in case of extra yahtzees %
+        dice = sort(finalDice(r, :)); % new variable 'dice' which is just rolls sorted %
         counts = histcounts(dice, 1:7); % gives amount of each number in dice. other functions will use this %
         scores = [50 * (any(counts == 5)), ... % checks for Yahtzee
                   40 * (isequal(counts(1:5), [1 1 1 1 1]) || isequal(counts(2:6), [1 1 1 1 1])), ... % checks for Large Straight
@@ -28,7 +28,3 @@ function score = yahtzeeScorer(rolls)
     if sum(score(7:12)) >= 63, score = score + [35, zeros(1, 12)]; end % upper section bonus, +35 if ≥ 65 %
     score(1) = score(1) + yahtzeeBonus; % add Yahtzee bonuses to score
 end
-
-
-rolls = []; % place holder, this won't actually affect anything. just resets rolls for the next turn %
- function score = yahtzeeScorer(rolls)
