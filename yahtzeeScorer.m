@@ -4,6 +4,7 @@ function score = yahtzeeScorer(finalDice)
 
     for r = 1:size(finalDice, 1) % should run 13 times, but here in case of extra yahtzees %
         dice = sort(finalDice(r, :)); % new variable 'dice' which is just rolls sorted %
+        dice = sort(finalDice(r, :)); % new variable 'dice' which is just finalDice sorted %
         counts = histcounts(dice, 1:7); % gives amount of each number in dice. other functions will use this %
         scores = [50 * (any(counts == 5)), ... % checks for Yahtzee
                   40 * (isequal(counts(1:5), [1 1 1 1 1]) || isequal(counts(2:6), [1 1 1 1 1])), ... % checks for Large Straight

@@ -8,8 +8,9 @@ function playYahtzeeGame()
 
     % Step 2: Calculate all scores using Sawyer's function
     score = yahtzeeScorer(finalDice);
+    scoreArray = score;
 
-    % Step 3: Choose the best scoring category
+    % Step 3: Choose the best scoring category1 2
     [bestCategory, bestScore] = chooseBestCategory(score);
 
     % Step 4: Display results
