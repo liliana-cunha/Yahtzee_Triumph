@@ -1,4 +1,4 @@
-
+%Youcan ignore this final. Was just some trial and error throughout our process. 
 %Liliana Cunha - dice rolling functions
 function finalDice = rollDice()
    numDice = 5; % Number of dice to roll
